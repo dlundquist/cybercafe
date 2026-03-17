@@ -1,0 +1,21 @@
+[Unit]
+Description=PPP Server (software modem TUN bridge)
+After=network.target
+Wants=ppp-server.socket
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+AmbientCapabilities=CAP_NET_ADMIN
+CapabilityBoundingSet=CAP_NET_ADMIN
+NoNewPrivileges=yes
+ExecStart=/usr/local/sbin/ppp-server
+Restart=on-failure
+StandardOutput=journal
+StandardError=journal
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target
+Also=ppp-server.socket

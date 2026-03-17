@@ -1,0 +1,18 @@
+[package]
+name = "ppp-server"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "ppp-server"
+path = "src/main.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+log = "0.4"
+env_logger = "0.11"
+clap = { version = "4", features = ["derive"] }
+libc = "0.2"
+md-5 = "0.10"
+mnl = { path = "../mnl" }
+privsep = { path = "../privsep" }

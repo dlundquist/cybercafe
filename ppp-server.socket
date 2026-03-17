@@ -1,0 +1,10 @@
+[Unit]
+Description=PPP Server Unix Socket
+
+[Socket]
+ListenStream=/run/ppp_server.sock
+SocketMode=0666
+SocketUser=nobody
+
+[Install]
+WantedBy=sockets.target

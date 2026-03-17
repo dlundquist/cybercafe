@@ -1,0 +1,23 @@
+[Unit]
+Description=TLS Guard (legacy TLS interceptor / plaintext upgrader)
+After=network.target ppp-server.service
+Requires=ppp-server.service
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW
+NoNewPrivileges=yes
+ExecStart=/usr/local/sbin/tls-guard
+ExecStopPost=/usr/sbin/nft delete table ip tls_guard
+ExecStopPost=-/usr/sbin/ip rule del fwmark 0x2 lookup 100
+ExecStopPost=-/usr/sbin/ip route del local 0.0.0.0/0 dev lo table 100
+Restart=on-failure
+StandardOutput=journal
+StandardError=journal
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[package]
+name = "modem-ctl"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "modem-ctl"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serialport = { version = "4", default-features = false }
+libc = "0.2"

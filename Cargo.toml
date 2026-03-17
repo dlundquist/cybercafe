@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "crates/spandsp-sys",
+    "crates/modem-engine",
+    "crates/sip-modem-server",
+    "crates/sip-modem-dial",
+    "crates/ppp-server",
+    "crates/modem-ctl",
+    "crates/mnl",
+    "crates/privsep",
+    "crates/tls-guard",
+]
+resolver = "2"
