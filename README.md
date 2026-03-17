@@ -27,7 +27,7 @@ descriptions, diagrams, and future possibilities.
 | `tls-guard` | Transparent TLS interceptor + plaintext-to-TLS upgrader for legacy machines |
 | `spandsp-sys` | FFI bindings to libspandsp (V.34-capable fork) |
 
-Companion project: [lo-fi-web](../lo-fi-web/) — an HTTP degrading proxy
+Companion project: [lo-fi-web](https://github.com/dlundquist/lo-fi-web) — an HTTP degrading proxy
 (Go) that strips JavaScript, downgrades HTML5, and dithers images so
 vintage browsers can render modern websites.
 

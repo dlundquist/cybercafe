@@ -238,12 +238,12 @@ networking stacks and the modern Internet.
 
 ### HTTP Degrading Proxy (Go) — `lo-fi-web`
 
-Lives in a separate directory: [`../lo-fi-web/`](../lo-fi-web/)
+Lives in a separate repository: [`lo-fi-web`](https://github.com/dlundquist/lo-fi-web)
 
 A standalone Go service, separate from the Rust workspace. The vintage browser
 configures it as a plain HTTP proxy; the proxy fetches the modern site, strips
 JavaScript and CSS, downgrades HTML5, dithers images, and returns something a
-1990s browser can render. See the [lo-fi-web README](../lo-fi-web/README.md)
+1990s browser can render. See the [lo-fi-web README](https://github.com/dlundquist/lo-fi-web#readme)
 for the full transformation pipeline, image profiles, and configuration.
 
 Go is a natural fit — `net/http` has built-in forward-proxy primitives and
